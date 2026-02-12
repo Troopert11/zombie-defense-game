@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zombie Defense: Paris</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <a href="../index.html" style="position: fixed; top: 10px; left: 10px; z-index: 1000; color: #fff; background: rgba(0,0,0,0.5); padding: 5px 10px; text-decoration: none; border-radius: 5px; font-family: sans-serif; font-size: 14px;">← Back to Hub</a>
+    <div id="game-container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="ui-overlay">
+            <div id="stats">
+                <div>Money: $<span id="money">100</span></div>
+                <div>Wave: <span id="wave">1</span></div>
+                <div>Civilians Saved: <span id="saved">0</span></div>
+                <div>City Health: <span id="health">100</span>%</div>
+            </div>
+            <div id="controls">
+                <button class="unit-btn" data-unit="soldier">Soldier ($50)</button>
+                <button class="unit-btn" data-unit="sniper">Sniper ($150)</button>
+                <button class="unit-btn" data-unit="medic">Medic ($100)</button>
+                <button class="unit-btn" data-unit="turret">Turret ($300)</button>
+                <button class="unit-btn" data-unit="tank">Tank ($600)</button>
+                <button class="unit-btn" data-unit="mg_nest">MG Nest ($400)</button>
+                <button class="unit-btn" data-unit="mortar">Mortar ($500)</button>
+                <div style="grid-column: span 2; height: 1px; background: #555; margin: 5px 0;"></div>
+                <button class="unit-btn" data-unit="airstrike">Airstrike ($800)</button>
+                <button class="unit-btn" data-unit="strafing_run">Strafe ($400)</button>
+                <div style="grid-column: span 2; height: 1px; background: #555; margin: 5px 0;"></div>
+                <button class="unit-btn" data-unit="barricade">Barricade ($40)</button>
+                <button class="unit-btn" data-unit="barbwire">Barb Wire ($30)</button>
+                <button class="unit-btn" data-unit="mine">Mine ($20)</button>
+            </div>
+        </div>
+        <div id="game-over" class="hidden">
+            <h1>CITY OVERRUN</h1>
+            <p>You survived <span id="final-waves">0</span> waves.</p>
+            <button onclick="location.reload()">Restart</button>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
